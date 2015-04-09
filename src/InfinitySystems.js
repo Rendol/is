@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Infinity Systems library
  *
@@ -7,14 +8,6 @@
 var InfinitySystems = {
 	prototypes: {},
 	classes: {},
-	creater: function(prototype) {
-		if ('Class' in window) {
-			return Class.apply(arguments);
-		}
-		return function () {
-			return prototype;
-		};
-	},
 	reg: function (name, prototype) {
 		this.prototypes[name] = prototype;
 	},
@@ -26,8 +19,8 @@ var InfinitySystems = {
 	},
 	cls: function (name, prototype) {
 		if (!(name in this.classes)) {
-			this.classes[name] = this.creater(IS.extend(
-				{},
+			this.classes[name] = Class($.extend(
+				true,
 				this.get(name),
 				prototype
 			));
@@ -36,25 +29,6 @@ var InfinitySystems = {
 	},
 	crt: function (name, config, prototype) {
 		return new (this.cls(name, prototype))(config);
-	},
-	extend: function (obj) {
-		Array.prototype.slice.call(arguments, 1).forEach(function (source) {
-			if (source) {
-				for (var prop in source) {
-					if (source[prop].constructor === Object) {
-						if (!obj[prop] || obj[prop].constructor === Object) {
-							obj[prop] = obj[prop] || {};
-							IS.extend(obj[prop], source[prop]);
-						} else {
-							obj[prop] = source[prop];
-						}
-					} else {
-						obj[prop] = source[prop];
-					}
-				}
-			}
-		});
-		return obj;
 	}
 };
 var IS = InfinitySystems;
