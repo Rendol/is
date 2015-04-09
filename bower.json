@@ -1,7 +1,7 @@
 {
-  "name": "is",
+  "name": "InfinitySystems",
   "version": "0.1",
-  "description": "TMT Journal",
+  "description": "InfinitySystems library",
   "main": "src/InfinitySystems.js",
   "moduleType": [
     "globals"
