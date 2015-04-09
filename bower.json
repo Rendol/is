@@ -1,0 +1,25 @@
+{
+  "name": "is",
+  "version": "0.1",
+  "description": "TMT Journal",
+  "main": "journal.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "InfinitySystems",
+    "is"
+  ],
+  "authors": [
+    "Rendol"
+  ],
+  "license": "MIT",
+  "homepage": "http://infinity-systems.ru/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
