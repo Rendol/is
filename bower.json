@@ -2,7 +2,7 @@
   "name": "is",
   "version": "0.1",
   "description": "TMT Journal",
-  "main": "journal.js",
+  "main": "src/InfinitySystems.js",
   "moduleType": [
     "globals"
   ],
