@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>InfinitySystems library Test</title>
+	<script type="application/javascript" src="../src/InfinitySystems.js"></script>
+</head>
+<body onload="run()">
+<script type="application/javascript">
+	function run() {
+		console.log('Start');
+		IS.reg('component.Test', function () {
+			return IS.extend({}, {
+				testValue: 'one'
+			})
+		});
+		var test = IS.crt('component.Test');
+		console.log('test', test);
+		console.log('test', test.testValue);
+		console.log('Finish');
+	}
+</script>
+</body>
+</html>
