@@ -14,16 +14,22 @@ IS.reg('components.Object', function () {
 			var me = this;
 			MK.Object.prototype.constructor.apply(me, arguments);
 			me
+				.iSet(data)
 				._setOld(data)
-				.set(data)
 				.on('render', function (evt) {
 					me.runInit();
 				})
 			;
 		},
 
+		iSet: function() {
+			this._setOld(this.toObject());
+			this.set.apply(this, arguments);
+			return this;
+		},
+
 		_setOld: function(data) {
-			this.old = data;
+			this.old = $.extend({}, data);
 			return this;
 		}
 	});

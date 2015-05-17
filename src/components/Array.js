@@ -97,7 +97,7 @@ IS.reg('components.Array', function () {
 					return item.id == dataItem.id;
 				});
 				if (exists.length) {
-					exists[0].set(dataItem);
+					exists[0].iSet(dataItem);
 				}
 				else {
 					var method = action == 'load' ? 'unshift' : 'push';
